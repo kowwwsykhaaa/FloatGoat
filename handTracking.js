@@ -26,7 +26,7 @@ async function setupHandTracking(videoElement, sendHands) {
       runtime: "mediapipe",
       solutionPath: "https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915",
       maxHands: 2,
-      modelType: "full",
+      modelType: "lite",
     };
 
     detector = await window.handPoseDetection.createDetector(model, detectorConfig);
