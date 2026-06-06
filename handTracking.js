@@ -21,12 +21,13 @@ async function setupHandTracking(videoElement, sendHands) {
     video.srcObject = stream;
     await video.play();
 
-    const model = window.handPoseDetection.SupportedModels.MediaPipeHands;
-    const detectorConfig = {
-  runtime: "tfjs",
+const model = window.handPoseDetection.SupportedModels.MediaPipeHands;
+const detectorConfig = {
+  runtime: "mediapipe",
+  solutionPath: "https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915",
   maxHands: 2,
-  modelType: "lite",
-};
+  modelType: "full",
+}
   
     detector = await window.handPoseDetection.createDetector(model, detectorConfig);
 
