@@ -23,12 +23,11 @@ async function setupHandTracking(videoElement, sendHands) {
 
     const model = window.handPoseDetection.SupportedModels.MediaPipeHands;
     const detectorConfig = {
-      runtime: "mediapipe",
-      solutionPath: "https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915",
-      maxHands: 2,
-      modelType: "lite",
-    };
-
+  runtime: "tfjs",
+  maxHands: 2,
+  modelType: "lite",
+};
+  
     detector = await window.handPoseDetection.createDetector(model, detectorConfig);
 
     console.log("Hand tracking initialized successfully");
